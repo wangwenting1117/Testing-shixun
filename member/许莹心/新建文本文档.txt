@@ -1,0 +1,3 @@
+11.14
+导入了freemarker的包，发送hello world邮件，配置发送邮件的属性文件
+
