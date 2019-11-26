@@ -26,8 +26,8 @@ import bsh.util.Sessiond;
 public class SendMail {
 	static int port = 25;
 	static String server = "smtp.126.com";
-	static String from = "a";
-	static String user = "xuyingxin@126.com";
+	static String from = "ÐíÓ¨ÐÄ";
+	static String user = "xuyingxinTest@126.com";
 	static String password = "123456abc";
 
 	public static void sendEmail(String email, String subject, String body) throws UnsupportedEncodingException {

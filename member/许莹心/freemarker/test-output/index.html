@@ -5,7 +5,7 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
     <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-s1">
-                    <span>E:\JAVA\freemarker\conf\Freemarker.xml</span>
+                    <span>D:\project-training\freemarker\conf\Freemarker.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -135,7 +135,7 @@
         </div> <!-- panel s1 -->
         <div panel-name="test-xml-s1" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">E:\JAVA\freemarker\conf\Freemarker.xml</span>
+            <span class="header-content">D:\project-training\freemarker\conf\Freemarker.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -145,7 +145,7 @@
   &lt;listeners&gt;
     &lt;listener class-name=&quot;com.edu.freemarker.FreemarkerTestListener&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test name=&quot;test1&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;test1&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.edu.test.TestCases&quot;/&gt;
     &lt;/classes&gt;
@@ -191,12 +191,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'test1')
 data.setCell(0, 2, 'com.edu.test.TestCases')
-data.setCell(0, 3, 15);
+data.setCell(0, 3, 8);
 window.suiteTableData['s1']= { tableData: data, tableDiv: 'times-div-s1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 15 ms</span>
+              <span class="suite-total-time">Total running time: 8 ms</span>
               <div id="times-div-s1">
               </div> <!-- times-div-s1 -->
             </div> <!-- times-div -->
