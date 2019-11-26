@@ -143,7 +143,7 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;s1&quot;&gt;
   &lt;listeners&gt;
-    &lt;listener class-name=&quot;com.webtest.demo.WebTestListener&quot;/&gt;
+    &lt;listener class-name=&quot;com.webtest.freemarker.WebTestListener&quot;/&gt;
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;test1&quot;&gt;
     &lt;classes&gt;
@@ -191,12 +191,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'test1')
 data.setCell(0, 2, 'com.webtest.demo.Demo')
-data.setCell(0, 3, 10);
+data.setCell(0, 3, 11);
 window.suiteTableData['s1']= { tableData: data, tableDiv: 'times-div-s1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 10 ms</span>
+              <span class="suite-total-time">Total running time: 11 ms</span>
               <div id="times-div-s1">
               </div> <!-- times-div-s1 -->
             </div> <!-- times-div -->

@@ -1,4 +1,4 @@
-package com.webtest.demo;
+package com.webtest.freemarker;
 
 import java.io.File;
 import java.io.StringWriter;

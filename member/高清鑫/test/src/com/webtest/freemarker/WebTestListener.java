@@ -1,4 +1,4 @@
-package com.webtest.demo;
+package com.webtest.freemarker;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -11,6 +11,7 @@ import org.testng.ITestContext;
 import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
+
 import com.webtest.utils.Log;
 import com.webtest.utils.ReadProperties;
 

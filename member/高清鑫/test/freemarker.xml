@@ -2,7 +2,7 @@
 
 <suite name="s1" verbose="1" >
 <listeners> 
-		<listener class-name="com.webtest.demo.WebTestListener" /> 
+		<listener class-name="com.webtest.freemarker.WebTestListener" /> 
 		
 	</listeners>
 	<test name="test1">
