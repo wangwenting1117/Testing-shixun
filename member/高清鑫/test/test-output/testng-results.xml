@@ -1,20 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="1" total="3" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="24507" started-at="2019-11-29T09:53:23 CST" finished-at="2019-11-29T09:53:48 CST">
+  <suite name="Default suite" duration-ms="34297" started-at="2019-12-02T14:53:11 CST" finished-at="2019-12-02T14:53:45 CST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="24507" started-at="2019-11-29T09:53:23 CST" finished-at="2019-11-29T09:53:48 CST">
+    <test name="Default test" duration-ms="34297" started-at="2019-12-02T14:53:11 CST" finished-at="2019-12-02T14:53:45 CST">
       <class name="com.edu.test.TestCases">
-        <test-method status="PASS" signature="doBeforeClass()[pri:0, instance:com.edu.test.TestCases@1dfe2924]" name="doBeforeClass" is-config="true" duration-ms="13246" started-at="2019-11-29T09:53:23 CST" finished-at="2019-11-29T09:53:37 CST">
+        <test-method status="PASS" signature="doBeforeClass()[pri:0, instance:com.edu.test.TestCases@610694f1]" name="doBeforeClass" is-config="true" duration-ms="12090" started-at="2019-12-02T14:53:11 CST" finished-at="2019-12-02T14:53:23 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- doBeforeClass -->
-        <test-method status="PASS" signature="testLogin()[pri:0, instance:com.edu.test.TestCases@1dfe2924]" name="testLogin" duration-ms="11213" started-at="2019-11-29T09:53:37 CST" finished-at="2019-11-29T09:53:48 CST">
+        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:com.edu.test.TestCases@610694f1]" name="login" duration-ms="11766" started-at="2019-12-02T14:53:24 CST" description="数据驱动登录" data-provider="login" finished-at="2019-12-02T14:53:36 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin1]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLogin -->
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:com.edu.test.TestCases@610694f1]" name="login" duration-ms="9188" started-at="2019-12-02T14:53:36 CST" description="数据驱动登录" data-provider="login" finished-at="2019-12-02T14:53:45 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
       </class> <!-- com.edu.test.TestCases -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
