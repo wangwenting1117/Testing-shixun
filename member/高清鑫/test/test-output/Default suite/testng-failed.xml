@@ -5,7 +5,7 @@
     <classes>
       <class name="com.edu.test.TestCases">
         <methods>
-          <include name="login" invocation-numbers="0 1"/>
+          <include name="login" invocation-numbers="4 5 6 8 9"/>
           <include name="doBeforeClass"/>
         </methods>
       </class> <!-- com.edu.test.TestCases -->

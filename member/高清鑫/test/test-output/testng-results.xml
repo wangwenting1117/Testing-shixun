@@ -1,49 +1,265 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="1" total="3" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="34297" started-at="2019-12-02T14:53:11 CST" finished-at="2019-12-02T14:53:45 CST">
+  <suite name="Default suite" duration-ms="983" started-at="2019-12-05T18:29:22 CST" finished-at="2019-12-05T18:29:23 CST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="34297" started-at="2019-12-02T14:53:11 CST" finished-at="2019-12-02T14:53:45 CST">
-      <class name="com.edu.test.TestCases">
-        <test-method status="PASS" signature="doBeforeClass()[pri:0, instance:com.edu.test.TestCases@610694f1]" name="doBeforeClass" is-config="true" duration-ms="12090" started-at="2019-12-02T14:53:11 CST" finished-at="2019-12-02T14:53:23 CST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- doBeforeClass -->
-        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:com.edu.test.TestCases@610694f1]" name="login" duration-ms="11766" started-at="2019-12-02T14:53:24 CST" description="数据驱动登录" data-provider="login" finished-at="2019-12-02T14:53:36 CST">
+    <test name="Default test" duration-ms="983" started-at="2019-12-05T18:29:22 CST" finished-at="2019-12-05T18:29:23 CST">
+      <class name="com.edu.test.TestExcel">
+        <test-method status="PASS" signature="testData(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.edu.test.TestExcel@3b0143d3]" name="testData" duration-ms="9" started-at="2019-12-05T18:29:23 CST" description="数据驱动实现登录" data-provider="login" finished-at="2019-12-05T18:29:23 CST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[admin1]]>
+                <![CDATA[admin]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[admin1]]>
+                <![CDATA[admin@qq.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[admin]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method status="PASS" signature="login(java.lang.String, java.lang.String)[pri:0, instance:com.edu.test.TestCases@610694f1]" name="login" duration-ms="9188" started-at="2019-12-02T14:53:36 CST" description="数据驱动登录" data-provider="login" finished-at="2019-12-02T14:53:45 CST">
+        </test-method> <!-- testData -->
+        <test-method status="PASS" signature="testData(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.edu.test.TestExcel@3b0143d3]" name="testData" duration-ms="3" started-at="2019-12-05T18:29:23 CST" description="数据驱动实现登录" data-provider="login" finished-at="2019-12-05T18:29:23 CST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[admin2]]>
+                <![CDATA[admin123]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[admin2]]>
+                <![CDATA[admin@qq.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[admin]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-      </class> <!-- com.edu.test.TestCases -->
+        </test-method> <!-- testData -->
+        <test-method status="PASS" signature="testData(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.edu.test.TestExcel@3b0143d3]" name="testData" duration-ms="2" started-at="2019-12-05T18:29:23 CST" description="数据驱动实现登录" data-provider="login" finished-at="2019-12-05T18:29:23 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin1@qq.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testData -->
+        <test-method status="PASS" signature="testData(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.edu.test.TestExcel@3b0143d3]" name="testData" duration-ms="2" started-at="2019-12-05T18:29:23 CST" description="数据驱动实现登录" data-provider="login" finished-at="2019-12-05T18:29:23 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin123]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin1@qq.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testData -->
+        <test-method status="PASS" signature="testData(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.edu.test.TestExcel@3b0143d3]" name="testData" duration-ms="1" started-at="2019-12-05T18:29:23 CST" description="数据驱动实现登录" data-provider="login" finished-at="2019-12-05T18:29:23 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin11@qq.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testData -->
+        <test-method status="PASS" signature="testData(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.edu.test.TestExcel@3b0143d3]" name="testData" duration-ms="1" started-at="2019-12-05T18:29:23 CST" description="数据驱动实现登录" data-provider="login" finished-at="2019-12-05T18:29:23 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin111]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testData -->
+        <test-method status="PASS" signature="testData(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.edu.test.TestExcel@3b0143d3]" name="testData" duration-ms="2" started-at="2019-12-05T18:29:23 CST" description="数据驱动实现登录" data-provider="login" finished-at="2019-12-05T18:29:23 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testData -->
+      </class> <!-- com.edu.test.TestExcel -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

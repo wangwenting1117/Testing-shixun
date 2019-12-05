@@ -3,7 +3,13 @@ package com.edu.test;
 import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.Driver;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -11,50 +17,381 @@ import com.webtest.core.BaseTest;
 import com.webtest.dataprovider.ExcelDataProvider;
 
 public class TestCases extends BaseTest{
+	String url = "http://localhost:8081/wp-login.php";
 	@Test(description="管理员登录")
 	public void adminLogin() {
 		//打开页面
-		webtest.open("http://localhost:8033/wordpress/wp-login.php");
+		webtest.open(url);
 		//文本框输入
 		webtest.type("name=log", "admin");
 		webtest.type("name=pwd", "admin");
 		webtest.click("xpath=//input[@type='submit']");
 		assertTrue(webtest.isTextPresent("登出"));
 	} 
+	
+	@Test(description="管理员注册")
+	public void adminregister() {
+		//实现登录
+		adminLogin();
+		//进入用户模块
+		webtest.click("id=menu-users");
+		
+		webtest.click("class=page-title-action");
+		webtest.typeAndClear("name=user_login", "admin");
+		webtest.typeAndClear("name=email", "admin@qq.com");
+		webtest.typeAndClear("name=first_name", "admin");
+		webtest.typeAndClear("name=last_name", "admin");
+		webtest.typeAndClear("name=url", "admin");
+
+		webtest.click("xpath=/html/body/div/div[2]/div[2]/div[1]/div[4]/form/table/tbody/tr[6]/td/button");
+		  
+		webtest.typeAndClear("id=pass1-text", "123456");
+		webtest.click("xpath=//input[@type='checkbox']");
+		webtest.click("id=role");
+		webtest.click("xpath=//option[@value='administrator']");
+		webtest.click("xpath=//input[@type='submit']");
+		
+		assertTrue(webtest.isTextPresent("新用户已创建"));
+	} 
+	
+	@Test(description="投稿者注册")
+	public void writerregister() {
+		//实现登录
+		adminLogin();
+		//进入用户模块
+		webtest.click("id=menu-users");
+		
+		webtest.click("class=page-title-action");
+		webtest.typeAndClear("name=user_login", "admin1");
+		webtest.typeAndClear("name=email", "admin1@qq.com");
+		webtest.typeAndClear("name=first_name", "admin1");
+		webtest.typeAndClear("name=last_name", "admin1");
+		webtest.typeAndClear("name=url", "admin1");
+
+		webtest.click("xpath=/html/body/div/div[2]/div[2]/div[1]/div[4]/form/table/tbody/tr[6]/td/button");
+//		webtest.click("xpath=//button[@class=button wp-generate-pw hide-if-no-js]");  
+		webtest.typeAndClear("id=pass1-text", "admin1");
+		webtest.click("xpath=//input[@type='checkbox']");
+		webtest.click("id=role");
+		webtest.click("xpath=//option[@value='contributor']");
+		webtest.click("xpath=//input[@type='submit']");
+		
+		assertTrue(webtest.isTextPresent("新用户已创建"));
+	}
+	
+	@Test(description="作者注册")
+	public void authorregister() {
+		//实现登录
+		adminLogin();
+		//进入用户模块
+		webtest.click("id=menu-users");
+		
+		webtest.click("class=page-title-action");
+		webtest.typeAndClear("name=user_login", "admin2");
+		webtest.typeAndClear("name=email", "admin2@qq.com");
+		webtest.typeAndClear("name=first_name", "admin2");
+		webtest.typeAndClear("name=last_name", "admin2");
+		webtest.typeAndClear("name=url", "admin2");
+		
+		webtest.click("xpath=/html/body/div/div[2]/div[2]/div[1]/div[4]/form/table/tbody/tr[6]/td/button");
+//		webtest.click("xpath=//button[@class=button wp-generate-pw hide-if-no-js]");  
+		webtest.typeAndClear("id=pass1-text", "admin2");
+		webtest.click("xpath=//input[@type='checkbox']");
+		webtest.click("id=role");
+		webtest.click("xpath=//option[@value='author']");
+		webtest.click("xpath=//input[@type='submit']");
+		
+		assertTrue(webtest.isTextPresent("新用户已创建"));
+	}
+	
+	@Test(description="编辑注册")
+	public void editorregister() {
+		//实现登录
+		adminLogin();
+		//进入用户模块
+		webtest.click("id=menu-users");
+		
+		webtest.click("class=page-title-action");
+		webtest.typeAndClear("name=user_login", "admin3");
+		webtest.typeAndClear("name=email", "admin3@qq.com");
+		webtest.typeAndClear("name=first_name", "admin3");
+		webtest.typeAndClear("name=last_name", "admin3");
+		webtest.typeAndClear("name=url", "admin3");
+
+		webtest.click("xpath=/html/body/div/div[2]/div[2]/div[1]/div[4]/form/table/tbody/tr[6]/td/button");
+//		webtest.click("xpath=//button[@class=button wp-generate-pw hide-if-no-js]");  
+		webtest.typeAndClear("id=pass1-text", "admin3");
+		webtest.click("xpath=//input[@type='checkbox']");
+		webtest.click("id=role");
+		webtest.click("xpath=//option[@value='editor']");
+		webtest.click("xpath=//input[@type='submit']");
+		
+		assertTrue(webtest.isTextPresent("新用户已创建"));
+	}
+	
+	@Test(description="订阅者注册")
+	public void readerregister() {
+		//实现登录
+		adminLogin();
+		//进入用户模块
+		webtest.click("id=menu-users");
+		
+		webtest.click("class=page-title-action");
+		webtest.typeAndClear("name=user_login", "admin4");
+		webtest.typeAndClear("name=email", "admin4@qq.com");
+		webtest.typeAndClear("name=first_name", "admin4");
+		webtest.typeAndClear("name=last_name", "admin4");
+		webtest.typeAndClear("name=url", "admin4");
+
+		webtest.click("xpath=/html/body/div/div[2]/div[2]/div[1]/div[4]/form/table/tbody/tr[6]/td/button");
+//		webtest.click("xpath=//button[@class=button wp-generate-pw hide-if-no-js]");  
+		webtest.typeAndClear("id=pass1-text", "admin4");
+		webtest.click("xpath=//input[@type='checkbox']");
+		webtest.click("id=role");
+		webtest.click("xpath=//option[@value='subscriber']");
+		webtest.click("xpath=//input[@type='submit']");
+		
+		assertTrue(webtest.isTextPresent("新用户已创建"));
+	}
+	
+	@DataProvider(name="register")
+	public Object [][] register() throws IOException{
+		ExcelDataProvider excelDataProvider = new ExcelDataProvider();
+		Object[][] object = excelDataProvider.getTestDataByExcel("E:\\aaathird\\register.xlsx","sheet1");
+		return object;
+	}
+	@Test(description="数据驱动实现角色为管理员的注册",dataProvider="register")
+	/*
+	 * 第一行数据不被读取，为各项的名称
+	 * 第二行数据为使用注册过的用户名以及注册过的邮箱注册
+	 * 第三行数据为未注册的用户名以及注册过的邮箱
+	 * 第四行数据为使用注册过的用户名及未注册过的邮箱注册
+	 * 第五行数据为使用未注册过的用户名及邮箱注册
+	 * 第六行数据为使用空的用户名以及未注册过的邮箱注册
+	 * 第七行数据为使用未注册过的用户名以及空的邮箱注册
+	 * 第八行数据为使用空的用户名及邮箱注册
+	 */
+	public void register(String user_login,String email,String first_name,String last_name,String url,String pass1) {
+		//实现登录
+		adminLogin();
+		//进入用户模块
+		webtest.click("id=menu-users");
+		webtest.click("class=page-title-action");
+		webtest.typeAndClear("name=user_login", user_login);
+		webtest.typeAndClear("name=email", email);
+		webtest.typeAndClear("name=first_name", first_name);
+		webtest.typeAndClear("name=last_name", last_name);
+		webtest.typeAndClear("name=url", url);
+
+		webtest.click("xpath=/html/body/div/div[2]/div[2]/div[1]/div[4]/form/table/tbody/tr[6]/td/button");
+//		webtest.click("xpath=//button[@class=button wp-generate-pw hide-if-no-js]");  
+		webtest.typeAndClear("id=pass1-text", pass1);
+		webtest.click("xpath=//input[@type='checkbox']");
+		webtest.click("id=role");
+		webtest.click("xpath=//option[@value='administrator']");
+		webtest.click("xpath=//input[@type='submit']");
+		
+		assertTrue(webtest.isTextPresent("新用户已创建"));
+	}
+	
+	@DataProvider(name="register1")
+	public Object [][] regiater1() throws IOException{
+		ExcelDataProvider excelDataProvider = new ExcelDataProvider();
+		Object[][] object = excelDataProvider.getTestDataByExcel("E:\\aaathird\\register.xlsx","sheet2");
+		return object;
+	}
+	@Test(description="数据驱动实现角色为投稿者的注册",dataProvider="register1")
+	/*
+	 * 第一行数据不被读取，为各项的名称
+	 * 第二行数据为使用注册过的用户名以及注册过的邮箱注册
+	 * 第三行数据为未注册的用户名以及注册过的邮箱
+	 * 第四行数据为使用注册过的用户名及未注册过的邮箱注册
+	 * 第五行数据为使用未注册过的用户名及邮箱注册
+	 * 第六行数据为使用空的用户名以及未注册过的邮箱注册
+	 * 第七行数据为使用未注册过的用户名以及空的邮箱注册
+	 * 第八行数据为使用空的用户名及邮箱注册
+	 */
+	public void register1(String user_login,String email,String first_name,String last_name,String url,String pass1) {
+		//实现登录
+		adminLogin();
+		//进入用户模块
+		webtest.click("id=menu-users");
+		webtest.click("class=page-title-action");
+		webtest.typeAndClear("name=user_login", user_login);
+		webtest.typeAndClear("name=email", email);
+		webtest.typeAndClear("name=first_name", first_name);
+		webtest.typeAndClear("name=last_name", last_name);
+		webtest.typeAndClear("name=url", url);
+
+		webtest.click("xpath=/html/body/div/div[2]/div[2]/div[1]/div[4]/form/table/tbody/tr[6]/td/button");
+//		webtest.click("xpath=//button[@class=button wp-generate-pw hide-if-no-js]");  
+		webtest.typeAndClear("id=pass1-text", pass1);
+		webtest.click("xpath=//input[@type='checkbox']");
+		webtest.click("id=role");
+		webtest.click("xpath=//option[@value='contributor']");
+		webtest.click("xpath=//input[@type='submit']");
+		
+		assertTrue(webtest.isTextPresent("新用户已创建"));
+	}
+	
+	@DataProvider(name="register2")
+	public Object [][] register2() throws IOException{
+		ExcelDataProvider excelDataProvider = new ExcelDataProvider();
+		Object[][] object = excelDataProvider.getTestDataByExcel("E:\\aaathird\\register.xlsx","sheet3");
+		return object;
+	}
+	@Test(description="数据驱动实现角色为作者的注册",dataProvider="register2")
+	/*
+	 * 第一行数据不被读取，为各项的名称
+	 * 第二行数据为使用注册过的用户名以及注册过的邮箱注册
+	 * 第三行数据为未注册的用户名以及注册过的邮箱
+	 * 第四行数据为使用注册过的用户名及未注册过的邮箱注册
+	 * 第五行数据为使用未注册过的用户名及邮箱注册
+	 * 第六行数据为使用空的用户名以及未注册过的邮箱注册
+	 * 第七行数据为使用未注册过的用户名以及空的邮箱注册
+	 * 第八行数据为使用空的用户名及邮箱注册
+	 */
+	public void register2(String user_login,String email,String first_name,String last_name,String url,String pass1) {
+		//实现登录
+		adminLogin();
+		//进入用户模块
+		webtest.click("id=menu-users");
+		webtest.click("class=page-title-action");
+		webtest.typeAndClear("name=user_login", user_login);
+		webtest.typeAndClear("name=email", email);
+		webtest.typeAndClear("name=first_name", first_name);
+		webtest.typeAndClear("name=last_name", last_name);
+		webtest.typeAndClear("name=url", url);
+
+		webtest.click("xpath=/html/body/div/div[2]/div[2]/div[1]/div[4]/form/table/tbody/tr[6]/td/button");
+//		webtest.click("xpath=//button[@class=button wp-generate-pw hide-if-no-js]");  
+		webtest.typeAndClear("id=pass1-text", pass1);
+		webtest.click("xpath=//input[@type='checkbox']");
+		webtest.click("id=role");
+		webtest.click("xpath=//option[@value='author']");
+		webtest.click("xpath=//input[@type='submit']");
+		
+		assertTrue(webtest.isTextPresent("新用户已创建"));
+	}
+	
+	@DataProvider(name="register3")
+	public Object [][] register3() throws IOException{
+		ExcelDataProvider excelDataProvider = new ExcelDataProvider();
+		Object[][] object = excelDataProvider.getTestDataByExcel("E:\\aaathird\\register.xlsx","sheet4");
+		return object;
+	}
+	@Test(description="数据驱动实现角色为编辑的注册",dataProvider="register3")
+	/*
+	 * 第一行数据不被读取，为各项的名称
+	 * 第二行数据为使用注册过的用户名以及注册过的邮箱注册
+	 * 第三行数据为未注册的用户名以及注册过的邮箱
+	 * 第四行数据为使用注册过的用户名及未注册过的邮箱注册
+	 * 第五行数据为使用未注册过的用户名及邮箱注册
+	 * 第六行数据为使用空的用户名以及未注册过的邮箱注册
+	 * 第七行数据为使用未注册过的用户名以及空的邮箱注册
+	 * 第八行数据为使用空的用户名及邮箱注册
+	 */
+	public void register3(String user_login,String email,String first_name,String last_name,String url,String pass1) {
+		//实现登录
+		adminLogin();
+		//进入用户模块
+		webtest.click("id=menu-users");
+		webtest.click("class=page-title-action");
+		webtest.typeAndClear("name=user_login", user_login);
+		webtest.typeAndClear("name=email", email);
+		webtest.typeAndClear("name=first_name", first_name);
+		webtest.typeAndClear("name=last_name", last_name);
+		webtest.typeAndClear("name=url", url);
+
+		webtest.click("xpath=/html/body/div/div[2]/div[2]/div[1]/div[4]/form/table/tbody/tr[6]/td/button");
+//		webtest.click("xpath=//button[@class=button wp-generate-pw hide-if-no-js]");  
+		webtest.typeAndClear("id=pass1-text", pass1);
+		webtest.click("xpath=//input[@type='checkbox']");
+		webtest.click("id=role");
+		webtest.click("xpath=//option[@value='editor']");
+		webtest.click("xpath=//input[@type='submit']");
+		
+		assertTrue(webtest.isTextPresent("新用户已创建"));
+	}
+	
+	@DataProvider(name="register4")
+	public Object [][] register4() throws IOException{
+		ExcelDataProvider excelDataProvider = new ExcelDataProvider();
+		Object[][] object = excelDataProvider.getTestDataByExcel("E:\\aaathird\\register.xlsx","sheet5");
+		return object;
+	}
+	@Test(description="数据驱动实现角色为订阅者的注册",dataProvider="register4")
+	/*
+	 * 第一行数据不被读取，为各项的名称
+	 * 第二行数据为使用注册过的用户名以及注册过的邮箱注册
+	 * 第三行数据为未注册的用户名以及注册过的邮箱
+	 * 第四行数据为使用注册过的用户名及未注册过的邮箱注册
+	 * 第五行数据为使用未注册过的用户名及邮箱注册
+	 * 第六行数据为使用空的用户名以及未注册过的邮箱注册
+	 * 第七行数据为使用未注册过的用户名以及空的邮箱注册
+	 * 第八行数据为使用空的用户名及邮箱注册
+	 */
+	public void register4(String user_login,String email,String first_name,String last_name,String url,String pass1) {
+		//实现登录
+		adminLogin();
+		//进入用户模块
+		webtest.click("id=menu-users");
+		webtest.click("class=page-title-action");
+		webtest.typeAndClear("name=user_login", user_login);
+		webtest.typeAndClear("name=email", email);
+		webtest.typeAndClear("name=first_name", first_name);
+		webtest.typeAndClear("name=last_name", last_name);
+		webtest.typeAndClear("name=url", url);
+
+		webtest.click("xpath=/html/body/div/div[2]/div[2]/div[1]/div[4]/form/table/tbody/tr[6]/td/button");
+//		webtest.click("xpath=//button[@class=button wp-generate-pw hide-if-no-js]");  
+		webtest.typeAndClear("id=pass1-text", pass1);
+		webtest.click("xpath=//input[@type='checkbox']");
+		webtest.click("id=role");
+		webtest.click("xpath=//option[@value='subscriber']");
+		webtest.click("xpath=//input[@type='submit']");
+		
+		assertTrue(webtest.isTextPresent("新用户已创建"));
+	}
+	
+	
 	@Test(description="投稿者登录")
 	public void writerLogin() {
 		//打开页面
-		webtest.open("http://localhost:8033/wordpress/wp-login.php");
+		webtest.open(url);
 		//文本框输入
 		webtest.type("name=log", "admin1");
 		webtest.type("name=pwd", "admin1");
 		webtest.click("xpath=//input[@type='submit']");
 		assertTrue(webtest.isTextPresent("登出"));
 	}
+	
 	@Test(description="作者登录")
 	public void authorLogin() {
 		//打开页面
-		webtest.open("http://localhost:8033/wordpress/wp-login.php");
+		webtest.open(url);
 		//文本框输入
 		webtest.type("name=log", "admin2");
 		webtest.type("name=pwd", "admin2");
 		webtest.click("xpath=//input[@type='submit']");
 		assertTrue(webtest.isTextPresent("登出"));
 	} 
+	
 	@Test(description="编辑登录")
 	public void editorLogin() {
 		//打开页面
-		webtest.open("http://localhost:8033/wordpress/wp-login.php");
+		webtest.open(url);
 		//文本框输入
 		webtest.type("name=log", "admin3");
 		webtest.type("name=pwd", "admin3");
 		webtest.click("xpath=//input[@type='submit']");
 		assertTrue(webtest.isTextPresent("登出"));
 	} 
+	
 	@Test(description="订阅者登录")
 	public void readerLogin() {
 		//打开页面
-		webtest.open("http://localhost:8033/wordpress/wp-login.php");
+		webtest.open(url);
 		//文本框输入
 		webtest.type("name=log", "admin4");
 		webtest.type("name=pwd", "admin4");
@@ -65,10 +402,10 @@ public class TestCases extends BaseTest{
 	@DataProvider(name="login")
 	public Object [][] loginname() throws IOException{
 		ExcelDataProvider excelDataProvider = new ExcelDataProvider();
-		Object[][] objects = excelDataProvider.getTestDataByExcel("E:\\aaathird\\login.xlsx","sheet1");
+		Object[][] objects = excelDataProvider.getTestDataByExcel("E:\\aaathird\\login1.xlsx","Sheet2");
 		return objects;
 	}
-	@Test(description="数据驱动",dataProvider="login")
+	@Test(description="数据驱动实现登录",dataProvider="login")
 	/*
 	 * 表格中第一行不被读取，故第二行数据才开始执行
 	 * 第二行数据是角色为投稿者的正确登录
@@ -83,13 +420,12 @@ public class TestCases extends BaseTest{
 	 * 第十一行数据是登录名为未注册的用户登录
 	 */
 	public void login(String name,String psd) {
-		webtest.open("http://localhost:8033/wordpress/wp-login.php");
+		webtest.open(url);
 		//文本框输入
 		webtest.typeAndClear("name=log", name);
 		webtest.typeAndClear("name=pwd", psd);
 		webtest.click("xpath=//input[@type='submit']");
 		assertTrue(webtest.isTextPresent("登出"));	
 	}
-	
 	
 }
