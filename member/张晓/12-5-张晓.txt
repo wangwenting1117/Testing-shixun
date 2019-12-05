@@ -1,0 +1,30 @@
+1、不知道怎么获取数据驱动里面的数据？
+首先需要创建数据驱动的类，类里面的方法就是读取表格数据的方法，再创建一个类用来做数据驱动，方法的内容就是调用数据驱动里获取数据的方法，再创建测试类，获取数据时需要继承刚刚的数据驱动的类，这样就完成了数据驱动。
+2、多个表格的列数不统一怎么办？
+需要在获取表格数据的方法里再添加一个参数，记录表格的列数。
+3、在为输入框做数据驱动的时候，sendkeys方法将所有的数据都添加在输入框里？
+需要用clear方法将原有内容清除，然后再添加。
+4、多个单选按钮的自动化测试怎么做？
+需要刷新数据
+List<WebElement> radios = driver.findElements(By.name("date_format"));
+		System.out.println(radios.size());
+		for(int i=0;i<radios.size()-1;i++){
+			Thread.sleep(3000);
+			radios = driver.findElements(By.name("date_format"));
+			while(radios.get(i).isSelected()==false){
+				radios.get(i).click();
+				driver.findElement(By.id("submit")).click();
+			}
+		}
+5、在做下拉列表的自动化测试时，总是报argument type mismatch的错误？
+原因就是从表格中获取到的数据与方法中调用数据的类型不同，造成了冲突，解决方法就是在使用数据的时候，先用String类型的参数，然后在强制转换为int类型。
+
+
+
+
+
+
+
+
+
+

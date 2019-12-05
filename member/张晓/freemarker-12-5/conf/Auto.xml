@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="s1" verbose="1">
+	<test name="shixun">
+		<classess>
+			<class name="com.edu.auto.LoginTest" />
+			<class name="com.edu.auto.GeneralTest" />
+			<class name="com.edu.auto.WritingTest" />
+			<class name="com.edu.auto.ReadingTest" />
+			<class name="com.edu.auto.DiscussionTest" />
+			<class name="com.edu.auto.MediaTest" />
+			<class name="com.edu.auto.PermalinksTest" />
+		</classess>
+	</test>
+</suite>
