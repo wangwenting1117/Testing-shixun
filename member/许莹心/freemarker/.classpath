@@ -17,5 +17,6 @@
 	<classpathentry kind="lib" path="libs/poi-ooxml-schemas-4.1.0.jar"/>
 	<classpathentry kind="lib" path="libs/selenium-server-standalone-3.141.59.jar"/>
 	<classpathentry kind="lib" path="libs/xmlbeans-3.0.1.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/auto2019"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
