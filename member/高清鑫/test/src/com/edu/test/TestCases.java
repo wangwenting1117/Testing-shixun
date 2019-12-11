@@ -1,5 +1,6 @@
 package com.edu.test;
 
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
@@ -23,8 +24,8 @@ public class TestCases extends BaseTest{
 		//打开页面
 		webtest.open(url);
 		//文本框输入
-		webtest.type("name=log", "admin");
-		webtest.type("name=pwd", "admin");
+		webtest.typeAndClear("name=log", "admin");
+		webtest.typeAndClear("name=pwd", "admin");
 		webtest.click("xpath=//input[@type='submit']");
 		assertTrue(webtest.isTextPresent("登出"));
 	} 
@@ -43,7 +44,7 @@ public class TestCases extends BaseTest{
 		webtest.typeAndClear("name=last_name", "admin");
 		webtest.typeAndClear("name=url", "admin");
 
-		webtest.click("xpath=/html/body/div/div[2]/div[2]/div[1]/div[4]/form/table/tbody/tr[6]/td/button");
+		webtest.click("xpath=//*[@id=\"createuser\"]/table/tbody/tr[6]/td/button");
 		  
 		webtest.typeAndClear("id=pass1-text", "123456");
 		webtest.click("xpath=//input[@type='checkbox']");
@@ -68,8 +69,7 @@ public class TestCases extends BaseTest{
 		webtest.typeAndClear("name=last_name", "admin1");
 		webtest.typeAndClear("name=url", "admin1");
 
-		webtest.click("xpath=/html/body/div/div[2]/div[2]/div[1]/div[4]/form/table/tbody/tr[6]/td/button");
-//		webtest.click("xpath=//button[@class=button wp-generate-pw hide-if-no-js]");  
+		webtest.click("xpath=//*[@id=\"createuser\"]/table/tbody/tr[6]/td/button");
 		webtest.typeAndClear("id=pass1-text", "admin1");
 		webtest.click("xpath=//input[@type='checkbox']");
 		webtest.click("id=role");
@@ -93,8 +93,7 @@ public class TestCases extends BaseTest{
 		webtest.typeAndClear("name=last_name", "admin2");
 		webtest.typeAndClear("name=url", "admin2");
 		
-		webtest.click("xpath=/html/body/div/div[2]/div[2]/div[1]/div[4]/form/table/tbody/tr[6]/td/button");
-//		webtest.click("xpath=//button[@class=button wp-generate-pw hide-if-no-js]");  
+		webtest.click("xpath=//*[@id=\"createuser\"]/table/tbody/tr[6]/td/button");
 		webtest.typeAndClear("id=pass1-text", "admin2");
 		webtest.click("xpath=//input[@type='checkbox']");
 		webtest.click("id=role");
@@ -118,8 +117,7 @@ public class TestCases extends BaseTest{
 		webtest.typeAndClear("name=last_name", "admin3");
 		webtest.typeAndClear("name=url", "admin3");
 
-		webtest.click("xpath=/html/body/div/div[2]/div[2]/div[1]/div[4]/form/table/tbody/tr[6]/td/button");
-//		webtest.click("xpath=//button[@class=button wp-generate-pw hide-if-no-js]");  
+		webtest.click("xpath=//*[@id=\"createuser\"]/table/tbody/tr[6]/td/button");
 		webtest.typeAndClear("id=pass1-text", "admin3");
 		webtest.click("xpath=//input[@type='checkbox']");
 		webtest.click("id=role");
@@ -143,8 +141,7 @@ public class TestCases extends BaseTest{
 		webtest.typeAndClear("name=last_name", "admin4");
 		webtest.typeAndClear("name=url", "admin4");
 
-		webtest.click("xpath=/html/body/div/div[2]/div[2]/div[1]/div[4]/form/table/tbody/tr[6]/td/button");
-//		webtest.click("xpath=//button[@class=button wp-generate-pw hide-if-no-js]");  
+		webtest.click("xpath=//*[@id=\"createuser\"]/table/tbody/tr[6]/td/button");
 		webtest.typeAndClear("id=pass1-text", "admin4");
 		webtest.click("xpath=//input[@type='checkbox']");
 		webtest.click("id=role");
@@ -182,9 +179,7 @@ public class TestCases extends BaseTest{
 		webtest.typeAndClear("name=first_name", first_name);
 		webtest.typeAndClear("name=last_name", last_name);
 		webtest.typeAndClear("name=url", url);
-
-		webtest.click("xpath=/html/body/div/div[2]/div[2]/div[1]/div[4]/form/table/tbody/tr[6]/td/button");
-//		webtest.click("xpath=//button[@class=button wp-generate-pw hide-if-no-js]");  
+		webtest.click("xpath=//*[@id=\"createuser\"]/table/tbody/tr[6]/td/button");
 		webtest.typeAndClear("id=pass1-text", pass1);
 		webtest.click("xpath=//input[@type='checkbox']");
 		webtest.click("id=role");
@@ -223,8 +218,7 @@ public class TestCases extends BaseTest{
 		webtest.typeAndClear("name=last_name", last_name);
 		webtest.typeAndClear("name=url", url);
 
-		webtest.click("xpath=/html/body/div/div[2]/div[2]/div[1]/div[4]/form/table/tbody/tr[6]/td/button");
-//		webtest.click("xpath=//button[@class=button wp-generate-pw hide-if-no-js]");  
+		webtest.click("xpath=//*[@id=\"createuser\"]/table/tbody/tr[6]/td/button");
 		webtest.typeAndClear("id=pass1-text", pass1);
 		webtest.click("xpath=//input[@type='checkbox']");
 		webtest.click("id=role");
@@ -263,8 +257,7 @@ public class TestCases extends BaseTest{
 		webtest.typeAndClear("name=last_name", last_name);
 		webtest.typeAndClear("name=url", url);
 
-		webtest.click("xpath=/html/body/div/div[2]/div[2]/div[1]/div[4]/form/table/tbody/tr[6]/td/button");
-//		webtest.click("xpath=//button[@class=button wp-generate-pw hide-if-no-js]");  
+		webtest.click("xpath=//*[@id=\"createuser\"]/table/tbody/tr[6]/td/button");
 		webtest.typeAndClear("id=pass1-text", pass1);
 		webtest.click("xpath=//input[@type='checkbox']");
 		webtest.click("id=role");
@@ -303,8 +296,7 @@ public class TestCases extends BaseTest{
 		webtest.typeAndClear("name=last_name", last_name);
 		webtest.typeAndClear("name=url", url);
 
-		webtest.click("xpath=/html/body/div/div[2]/div[2]/div[1]/div[4]/form/table/tbody/tr[6]/td/button");
-//		webtest.click("xpath=//button[@class=button wp-generate-pw hide-if-no-js]");  
+		webtest.click("xpath=//*[@id=\"createuser\"]/table/tbody/tr[6]/td/button");
 		webtest.typeAndClear("id=pass1-text", pass1);
 		webtest.click("xpath=//input[@type='checkbox']");
 		webtest.click("id=role");
@@ -343,8 +335,7 @@ public class TestCases extends BaseTest{
 		webtest.typeAndClear("name=last_name", last_name);
 		webtest.typeAndClear("name=url", url);
 
-		webtest.click("xpath=/html/body/div/div[2]/div[2]/div[1]/div[4]/form/table/tbody/tr[6]/td/button");
-//		webtest.click("xpath=//button[@class=button wp-generate-pw hide-if-no-js]");  
+		webtest.click("xpath=//*[@id=\"createuser\"]/table/tbody/tr[6]/td/button");
 		webtest.typeAndClear("id=pass1-text", pass1);
 		webtest.click("xpath=//input[@type='checkbox']");
 		webtest.click("id=role");
@@ -427,5 +418,40 @@ public class TestCases extends BaseTest{
 		webtest.click("xpath=//input[@type='submit']");
 		assertTrue(webtest.isTextPresent("登出"));	
 	}
-	
+	@DataProvider(name="upload")
+	public Object [][] upload() throws IOException{
+		ExcelDataProvider excelDataProvider = new ExcelDataProvider();
+		Object[][] objects = excelDataProvider.getTestDataByExcel("E:\\aaathird\\login1.xlsx","Sheet3");
+		return objects;
+	}
+	@Test(description="上传图片",dataProvider="upload")
+	/*
+	 * 表格中第一行不被读取，故第二行数据才开始执行
+	 * 第二行数据是不超过100M的音频，以mp3结尾
+	 * 第三行数据是不超过100M的音频，以mp3结尾
+	 * 第四行数据是不超过100M的音频，以mp3结尾
+	 * 第五行数据是不超过100M的压缩包，以zip结尾
+	 * 第六行数据是10M多的视频，以mov结尾
+	 * 第七行数据是80M多的视频，以mov结尾
+	 * 第八行数据是10M多的视频，以mp4结尾
+	 * 第九行数据是不超过100M的音频，以flac结尾
+	 * 第十行数据是不超过100M的动图，以gif结尾
+	 * 第十一行数据是不超过100M的图片，以jpg结尾
+	 * 第十二行数据是不超过100M的图片，以jpg结尾
+	 * 第十三行数据是不超过100M的图片，以png结尾
+	 * 第十四行数据是不超过100M的文档，以txt结尾
+	 * 第十五行数据是不超过100M的文档，以jmx结尾
+	 * 第十六行数据是不超过100M的文档，以md结尾
+	 * 第十七行数据是不超过100M的文件，以war结尾
+	 * 第十八行数据是exe文件
+	 */
+	private void up(String str) {
+		adminLogin();
+		webtest.click("id=menu-media");
+		webtest.click("class=page-title-action");
+		webtest.click("link=标准浏览器上传工具");
+		webtest.typeAndClear("xpath=//*[@id=\"async-upload\"]",str);
+		webtest.click("xpath=//*[@id=\"html-upload\"]");
+		assertFalse(webtest.isTextPresent("登出"));
+	}
 }
